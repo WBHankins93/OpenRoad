@@ -21,26 +21,22 @@
     </nav>
   </header>
   <main>
-    <form action="/" method="POST">
+    <form action="/trip" method="POST">
       <h3>Plan A Trip</h3>
       <br/>
-          <%for (let i = 0; i < trips.length; i++){ %>
-               <option value="<%=trips[i].id%>"><%=trips[i].name%></option>
-          <%}%>
-        </select>
 
       <label for="">Name of Trip</label>
       <br/>
 
-      <input type="text" name="sCity" /><br/>
+      <input type="text" name="name" /><br/>
       <label for="">Starting Point</label>
       <br/>
 
-      <input type="text" name="cityStop" /><br/>
+      <input type="text" name="cityStart" /><br/>
       <label for="">Endpoint</label>
       <br/>
 
-      <input type="text" name="cityStop" /><br/>
+      <input type="text" name="cityEnd" /><br/>
       <label for="">What kind of trip are you taking?</label>
       <br/>
 
@@ -48,11 +44,11 @@
       <label for="">Why are you going?</label>
       <br/>
 
-      <input type="text" name="extra" /><br/>
-      <label for="">Any Additional Details</label>
+      <input type="text" name="extraDetails" /><br/>
+      <%# <label for="">Any Additional Details</label>
       <br/>
 
-      <input type="text" name="body"></input><br/>
+      <input type="text" name="body"></input><br/> %>
       <input type="submit" value="Create Trip"/>
       </form>
   </main>

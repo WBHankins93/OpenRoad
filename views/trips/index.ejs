@@ -7,6 +7,7 @@
   <body>
     <header>
       <h1>Trips</h1>
+      <h3 id="logout">Logout</h3>
       <nav>
         <ul>
           <li>
@@ -21,12 +22,12 @@
       <main>
         <h2>List of Trips</h2>
         <ul>
-          <% for(let i = 0; i < trips.length; i++){ %>
-            <li>
-              <a href="/trips/<%=trip[i]._id%>"><%=trip[i].name%></a>
-            </li>
-          <% } %>
-        </ul>
+      <%  for ( let i = 0; i < trips.length; i++ ) { %>
+        <li>
+      <%=  trips[i].name %>
+      </li>
+    <%    } %>
+  </ul>
       </main>
   </body>
 </html>
