@@ -12,6 +12,19 @@
       /* The width is the width of the web page */
     }
 
+    /* h1 {
+      text-decoration:underline;
+    } */
+
+    hr {
+    border: none;
+    border-top: 3px double #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
 
     html, body {
         height: 100%;
@@ -89,14 +102,53 @@
         width: 345px;
       }
 
+
   </style>
 </head>
 
 <body>
-  <h3>Welcome to the Open Road</h3>
+  <header>
+
+    <h1>Welcome to the Open Road</h1>
+  </header>
+
+  <div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a href="">Login</a>
+  <a href="">Sign Up</a>
+</div>
   <!--The div element for the map -->
   <input id="pac-input" class="controls" type="text" placeholder="Search Box">
   <div id="map"></div>
+
+
+
+  <div class="plan-trip">
+    <h1>Plan Trip</h1>
+  </div>
+  <hr>
+
+  <div class="browse-trip">
+    <h1>Browse Trips</h1>
+    <img src="/Logo/ORvan.png" alt="">
+  </div>
+  <hr>
+
+  <div class="staff-favs">
+    <h1>Staff Favorites</h1>
+  </div>
+  <hr>
+
+  <div class="about">
+    <h1>About Open Road</h1>
+  </div>
+  <hr>
+
+  <div class="contact">
+    <footer>
+      <h1>Contact<h1>
+    </footer>
+  </div>
 
   <script>
     // Initialize and add the map
