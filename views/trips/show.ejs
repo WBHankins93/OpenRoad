@@ -1,37 +1,30 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/trips">Browse Trips</a>
-          </li>
-          <li><a href="/trips/<%=trip.id%>/edit">Edit Trip</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h1><%=trip.name%></h1>
-      <small>by: <a href="/trips/<%=trip.id%>"><%=trip.name%></a></small>
-      <section>
-        <%=trip.body%>
-      </section>
-      <section>
-          <a href="/trips/<%=trip.id%>/edit">Edit</a>
-      </section>
-      <section>
-          <form action="/trips/<%=trip._id%>?_method=DELETE" method="POST">
-              <input type="submit" value="Delete Trip"/>
-          </form>
-      </section>
-    </main>
-  </body>
+<head>
+  <title></title>
+</head>
+<body>
+  <header>
+    <h1>Show page for <%= trip.name %></h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/trip">Trip Index</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Trip Details:</h2>
+      <ul>
+        <li>Name: <%= trip.name %></li>
+      </ul>
+    </section>
+  </main>
+</body>
 </html>

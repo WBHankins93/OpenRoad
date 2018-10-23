@@ -75,19 +75,28 @@ router.post('/', async (req, res) => {
 });
 
 // Create a show route here for each trip
-router.get('/:id', async (req, res) => {
+// router.get('/:id', async (req, res) => {
+//   console.log(req.params.id);
+//
+//   try {
+//     const foundTrip = await Trip.findById(req.params.id, (err, foundTrip) => {
+//       res.render('./trips/show.ejs', {
+//         trip: foundTrip
+//       })
+//     });
+//
+//   } catch (err) {
+//     res.send(err);
+//   }
+// });
+
+router.get('/:id', (req, res) => {
   console.log(req.params.id);
-
-  try {
-    const foundTrip = await Trip.findById(req.params.id, (req, res) => {
-      res.render('./trips/show.ejs', {
-        trip: foundTrip
-      })
+  Trip.findById(req.params.id, (err, foundTrip) => {
+    res.render('trips/show.ejs', {
+      trip: foundTrip
     });
-
-  } catch (err) {
-    res.send(err);
-  }
+  });
 });
 
 /// Create edit route
