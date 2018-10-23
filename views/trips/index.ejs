@@ -25,7 +25,7 @@
       <%  for ( let i = 0; i < trips.length; i++ ) { %>
         <li>
           <%=  trips[i].name %> </br>
-          <form action="/trips/<%=trips[i].id%>" method="GET">
+          <form action="/trips/<%=trips.id%>" method="GET">
             <input type="submit" value="Submit">
         </form>
       </li>

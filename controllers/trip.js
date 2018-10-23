@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
       trips: foundTrips
     });
 
-  } catch(err) {
+  } catch (err) {
     res.send(err);
   }
 
@@ -60,7 +60,7 @@ router.get('/', async (req, res) => {
 
 // Route for Add Trip
 router.get('/new', (req, res) => {
-    res.render('./trips/new.ejs')
+  res.render('./trips/new.ejs')
 })
 
 router.post('/', async (req, res) => {
@@ -69,7 +69,7 @@ router.post('/', async (req, res) => {
     const createdTrip = await Trip.create(req.body);
     console.log(createdTrip);
     res.redirect('/trip');
-  } catch(err) {
+  } catch (err) {
     res.send(err);
   }
 });
@@ -79,12 +79,13 @@ router.get('/:id', async (req, res) => {
   console.log(req.params.id);
 
   try {
-    const foundTrip = await Trip.findById(req.params.id);
-    res.render('./trips/show.ejs', {
-      trip: foundTrip
-    })
+    const foundTrip = await Trip.findById(req.params.id, (req, res) => {
+      res.render('./trips/show.ejs', {
+        trip: foundTrip
+      })
+    });
 
-  } catch(err) {
+  } catch (err) {
     res.send(err);
   }
 });
@@ -92,7 +93,7 @@ router.get('/:id', async (req, res) => {
 /// Create edit route
 router.get('/:id/edit', (req, res) => {
   Trip.findById(req.params.id, (err, editAuthor) => {
-    res.render('/trips/edit.ejs')
+    res.render('trips/edit.ejs')
   })
 })
 
