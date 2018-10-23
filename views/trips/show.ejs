@@ -14,6 +14,7 @@
           <li>
             <a href="/trips">Browse Trips</a>
           </li>
+          <li><a href="/trips/<%=trip.id%>/edit">Edit Trip</a></li>
         </ul>
       </nav>
     </header>
@@ -28,7 +29,7 @@
       </section>
       <section>
           <form action="/trips/<%=trip._id%>?_method=DELETE" method="POST">
-              <input type="submit" value="Delete Article"/>
+              <input type="submit" value="Delete Trip"/>
           </form>
       </section>
     </main>
