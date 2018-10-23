@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Trips</h1>
+      <h3 id="logout">Logout</h3>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/trip/new">Create a new Trip</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <main>
+        <h2>List of Trips</h2>
+        <ul>
+      <%  for ( let i = 0; i < trips.length; i++ ) { %>
+        <li>
+          <%=  trips[i].name %> </br>
+          <form action="/trips/<%=trips[i].id%>" method="GET">
+            <input type="submit" value="Submit">
+        </form>
+      </li>
+    <%    } %>
+  </ul>
+      </main>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <header>
+    <h1>Create a Trip</h1>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/index">Browse Trips</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <form action="/trip" method="POST">
+      <h3>Plan A Trip</h3>
+      <br/>
+
+      <label for="">Name of Trip</label>
+      <br/>
+
+      <input type="text" name="name" /><br/>
+      <label for="">Starting Point</label>
+      <br/>
+
+      <input type="text" name="cityStart" /><br/>
+      <label for="">Endpoint</label>
+      <br/>
+
+      <input type="text" name="cityEnd" /><br/>
+      <label for="">What kind of trip are you taking?</label>
+      <br/>
+
+      <input type="text" name="tripReason" /><br/>
+      <label for="">Why are you going?</label>
+      <br/>
+
+      <input type="text" name="extraDetails" /><br/>
+      <%# <label for="">Any Additional Details</label>
+      <br/>
+
+      <input type="text" name="body"></input><br/> %>
+      <input type="submit" value="Create Trip"/>
+      </form>
+  </main>
+</body>
+
+</html>

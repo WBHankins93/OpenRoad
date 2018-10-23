@@ -2,16 +2,16 @@ const mongoose         = require('mongoose');
 
 const connectionString = 'mongodb://localhost/openRoad';
 
-mongoose.connect(connectionString, { newUrlParser: true });
+mongoose.connect(connectionString, { useNewUrlParser: true });
 
 mongoose.connection.on('connected', () => {
-  console.log(`Mongoose is connected to ${connectionString}`)
+  console.log('Mongoose connected at ', connectionString);
 });
 
 mongoose.connection.on('disconnected', () => {
-  console.log('Mongoose is disconnected')
+  console.log('Mongoose disconnected');
 });
 
 mongoose.connection.on('error', (err) => {
-  console.log('Mongoose error', err)
+  console.log('Mongoose error ', err);
 });

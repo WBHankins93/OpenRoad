@@ -1,9 +1,22 @@
-const express = require('express');
-const app     = express();
+const express        = require('express');
+const app            = express();
+const bodyParser     = require('body-parser');
+const methodOverride = require('method-override');
 
-
+// Require our database
 require('./db/db');
 
+// Require our controller
+const tripController = require('./controllers/trip');
+
+// Apply middleware here
+app.use(express.static( 'public' ) );
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
+
+
+// Call the controller here
+app.use('/trip', tripController)
 
 
 app.get('/', (req, res) => {

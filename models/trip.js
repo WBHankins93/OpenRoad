@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const tripSchema = new mongoose.model({
+const tripSchema = new mongoose.Schema({
   name: {type: String, required: true},
   cityStart: {type: String, required: true},
   cityEnd: {type: String, required: true},
-  theme: {type: String, required: true},
+  theme: String,
   tripReason: {type: String, required: true},
   extraDetails: String
 });
