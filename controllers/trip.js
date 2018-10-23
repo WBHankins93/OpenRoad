@@ -101,8 +101,10 @@ router.get('/:id', (req, res) => {
 
 /// Create edit route
 router.get('/:id/edit', (req, res) => {
-  Trip.findById(req.params.id, (err, editAuthor) => {
-    res.render('trips/edit.ejs')
+  Trip.findById(req.params.id, (err, editTrip) => {
+    res.render('trips/edit.ejs', {
+      trip: editTrip
+    })
   })
 })
 

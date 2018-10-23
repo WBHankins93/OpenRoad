@@ -9,14 +9,13 @@
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/trips">Trips Home</a></li>
+        <li><a href="/trip">Trips Home</a></li>
       </ul>
     </nav>
   </header>
   <main>
     <h2>Trip Details:</h2>
-    <form action="/trips/<%=trip.id%>?_method=PUT" method="POST">
-      <input type="text" name="name" value="<%=trip.name%>">
+    <form action="/trip/<%=trip.id%>?_method=PUT" method="POST">
       <button type="submit">Update Trip</button>
     </form>
   </main>
