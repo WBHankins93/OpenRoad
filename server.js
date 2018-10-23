@@ -10,8 +10,10 @@ require('./db/db');
 const tripController = require('./controllers/trip');
 
 // Apply middleware here
+app.use(express.static( 'public' ) );
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
+
 
 // Call the controller here
 app.use('/trip', tripController)
