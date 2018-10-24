@@ -15,7 +15,6 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/trip">Trip Index</a></li>
-        <li><a href="/trip/<%=trip.id%>/edit">Edit Trip</a></li>
       </ul>
     </nav>
   </header>
@@ -30,6 +29,9 @@
         <li>Why are You Taking This Trip? </br> <%= trip.extraDetails %></li></br>
       </ul>
     </section>
+    <section>
+          <a href="/trip/<%=trip.id%>/edit">Edit</a>
+      </section>
 
     <section>
       <form action="/trip/<%=trip.id%>?_method=DELETE" method="POST" >

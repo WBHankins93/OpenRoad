@@ -25,6 +25,9 @@
       <%  for ( let i = 0; i < users.length; i++ ) { %>
         <li>
           <%=  users[i].name %> </br>
+
+          <img src="<%=users[i].profilePic%>"/></br>
+
           <form action="/users/<%=users[i].id%>" method="GET">
             <input type="submit" value="View User">
 

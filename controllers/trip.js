@@ -54,7 +54,11 @@ router.get('/:id/edit', (req, res) => {
 })
 
 
-// Create a POST route for edit page
-
+// Create a PUT route for edit page
+router.put('/:id', (req, res) => {
+  Trip.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updatedTrip) => {
+    res.redirect('/trip')
+  })
+})
 
 module.exports = router;
