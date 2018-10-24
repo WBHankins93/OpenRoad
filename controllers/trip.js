@@ -90,6 +90,7 @@ router.post('/', async (req, res) => {
 //   }
 // });
 
+// Create a SHOW route for each trip
 router.get('/:id', (req, res) => {
   console.log(req.params.id);
   Trip.findById(req.params.id, (err, foundTrip) => {
@@ -106,8 +107,11 @@ router.get('/:id/edit', (req, res) => {
       trip: editTrip
     })
   })
+
 })
 
+
+// Create a POST route for edit page
 
 
 module.exports = router;

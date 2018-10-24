@@ -15,9 +15,40 @@
   </header>
   <main>
     <h2>Trip Details:</h2>
+
     <form action="/trip/<%=trip.id%>?_method=PUT" method="POST">
+      <h3>Edit Your Trip</h3>
+      <br/>
+
+      <label for="">Name of Trip</label>
+      <br/>
+      <input type="text" name="name" /><br/>
+
+      <label for="">Starting Point</label>
+      <br/>
+      <input type="text" name="cityStart" /><br/>
+
+      <label for="">Endpoint</label>
+      <br/>
+      <input type="text" name="cityEnd" /><br/>
+
+      <label for="">What kind of trip are you taking?</label>
+      <br/>
+      <input type="text" name="tripReason" /><br/>
+
+      <label for="">Why are you going?</label>
+      <br/>
+      <input type="text" name="extraDetails" /><br/>
+
+
+
+      <input type="submit" value="Update Trip"/>
+      </form>
+
+
+    <%# <form action="/trip/<=trip.id>?_method=PUT" method="POST">
       <button type="submit">Update Trip</button>
-    </form>
+    </form> %>
   </main>
 </body>
 </html>
