@@ -61,4 +61,13 @@ router.put('/:id', (req, res) => {
   })
 })
 
+// Make a delete route for trips
+router.delete('/:id', (req, res) => {
+  Trip.findOneAndDelete(req.params.id, (err, deletedTrip) => {
+    res.redirect('/trip')
+  })
+})
+
+
+
 module.exports = router;
