@@ -19,9 +19,18 @@
     </header>
     <main>
       <h1><%=users.name%></h1>
-    
+
       <section>
-        <%=users.body%>
+        Hometown:
+        <%=users.hometown%></br>
+      
+        Age:
+        <%=users.age%></br>
+
+        Vehicle:
+        <%=users.carModel%></br>
+        <%=users.petCheckYes%></br>
+        <%=users.petCheckNo%></br>
       </section>
       <section>
           <a href="/users/<%=users.id%>/show">Edit</a>
