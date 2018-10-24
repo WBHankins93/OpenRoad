@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <header>
+    <h1>Edit Trip</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/trip">Trips Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Trip Details:</h2>
+    <form action="/trip/<%=trip.id%>?_method=PUT" method="POST">
+      <button type="submit">Update Trip</button>
+    </form>
+  </main>
+</body>
+</html>
