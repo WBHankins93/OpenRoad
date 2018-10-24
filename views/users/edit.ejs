@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,9 +20,10 @@
       </nav>
     </header>
       <main>
-        <h2>Profile Information</h2>
+        <h2>Edit Profile</h2>
 
-        <form action="/users" method="POST">
+     <main>
+        <form action="/users<%=users.id%>?_method=PUT" method="POST">
 
             <label for="">Name</label>
             <br />
@@ -31,7 +31,7 @@
 
             <label for="">Upload Profile Pic</label>
             <br />
-            <input type="text" name="profilePic" /><br />
+            <input type="text" name="picture" /><br />
 
             <label for="">Hometown</label>
             <br />
@@ -50,7 +50,7 @@
             <input type="radio" name="petCheckNo"/>No<br />
 
 
-            <input type="submit" value="Create New Profile" /></br>
+            <input type="submit" value="Edit User" /></br>
         </form>
       </main>
   </body>
