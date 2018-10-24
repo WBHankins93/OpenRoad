@@ -2,11 +2,12 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title></title>
+    <meta charset="utf-8">
+    <title></title>
 </head>
 
 <body>
+<<<<<<< HEAD
   <header>
     <h1>Create a Trip</h1>
     <nav>
@@ -50,6 +51,65 @@
       <input type="submit" value="Create Trip"/>
       </form>
   </main>
+=======
+    <header>
+        <h1>Create a Trip</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/trip">Browse Trips</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="/trip" method="POST">
+            <h3>Plan A Trip</h3>
+            <br />
+
+            <label for="">Name of Trip</label>
+            <br />
+
+            <input type="text" name="name" /><br />
+            <label for="">Trip Theme</label></br>
+            <select name="themes">
+                <option value="historicalTourism">Historical Tourism</option>
+                <option value="alcoholTourism">Alcohol Tourism</option>
+                <option value="wineTourism">Wine Tourism</option>
+                <option value="foodTourism">Food Tourism</option>
+                <option value="hikingCamping">Hiking or Camping</option>
+                <option value="waterSports">Water Sports</option>
+                <option value="music">Music</option>
+            </select></br>
+            <label for="">Starting Point</label>
+            <br />
+
+            <input type="text" name="cityStart" /><br />
+            <label for="">Endpoint</label>
+            <br />
+
+            <input type="text" name="cityEnd" /><br />
+            <label for="">What kind of trip are you taking?</label>
+            <br />
+
+            <input type="text" name="tripReason" /><br />
+            <label for="">Why are you going?</label>
+            <br />
+
+            <input type="text" name="extraDetails" /><br />
+            <label for="">Any Additional Details</label><br/>
+      
+
+      <input type="text" name="body"></input><br/> 
+
+            <input type="submit" value="Create Trip" /></br>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+>>>>>>> 79978c49f4607989694cc9f2634b28516ed2e71c
 </body>
 
 </html>

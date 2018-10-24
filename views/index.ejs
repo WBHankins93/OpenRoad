@@ -2,9 +2,17 @@
 <html>
 
 <head>
-  <%# <script src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script> %>
-  <style>
-
+    <%# <script src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script> %>
+    <style>
+        html, body {
+            margin:auto;
+          background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-665023.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+          height: 100%;
+  position: absolute;
+}
   h1 {
     font-family: 'BioRhyme', serif;
   }
@@ -16,6 +24,7 @@
   #map {
     width: 100%;
     height: 600px;
+    padding: 5px;
 }
 .controls {
     margin-top: 10px;
@@ -140,14 +149,15 @@
 
 
   </style>
-  <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-  <header>
+    <header>
 
-    <h1>Welcome to the Open Road</h1>
-  </header>
+        <h1>Welcome to the Open Road</h1>
+    </header>
 
   <div class="topnav">
   <a class="active" href="/">Home</a>
@@ -260,13 +270,8 @@
   });
 }
   </script>
-  <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJq8KQKS8pry66L5fJPWHWPm9Mbfc5KaI&callback=initMap&libraries=places">
-  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJq8KQKS8pry66L5fJPWHWPm9Mbfc5KaI&callback=initMap&libraries=places">
+    </script>
 </body>
 
 </html>

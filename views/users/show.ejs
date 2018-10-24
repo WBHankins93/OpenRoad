@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/users/">Edit profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1><%=users.name%></h1>
+    
+      <section>
+        <%=users.body%>
+      </section>
+      <section>
+          <a href="/users/<%=users.id%>/show">Edit</a>
+      </section>
+      <section>
+          <form action="/users/<%=users._id%>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete User"/>
+          </form>
+      </section>
+    </main>
+  </body>
+</html>

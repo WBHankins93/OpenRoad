@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Profile Page</h1>
+      <h3 id="logout">Welcome</h3>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/users/show">Edit your Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <main>
+        <h2>Users</h2>
+        <ul>
+      <%  for ( let i = 0; i < users.length; i++ ) { %>
+        <li>
+          <%=  users[i].name %> </br>
+          <form action="/users/<%=users[i].id%>" method="GET">
+            <input type="submit" value="Submit">
+
+        </form>
+      </li>
+    <%    } %>
+  </ul>
+     <main>
+        
+      </main>
+  </body>
+</html>
