@@ -2,9 +2,10 @@
 <html>
 
 <head>
-    <%# <script src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script> %>
-    <style>
-        html, body {
+  <%# <script src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script> %>
+  <style>
+    html, body {
+          font-family: 'Raleway', sans-serif;
             margin:auto;
           background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-665023.jpg);
             background-size: cover;
@@ -57,7 +58,10 @@
 
     }
 /*  */
-
+#ben, #julian {
+  max-width: 400px;
+  max-height: 420px;
+}
 
     hr {
     border: none;
@@ -69,7 +73,9 @@
     margin: 0 auto;
 }
 
+.team {
 
+}
 
     /* html, body {
         height: 100%;
@@ -149,27 +155,27 @@
 
 
   </style>
-    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-    <header>
+  <header>
 
-        <h1>Welcome to the Open Road</h1>
-    </header>
+    <h1>Welcome to the Open Road</h1>
+  </header>
 
   <div class="topnav">
-  <a class="active" href="/">Home</a>
-  <a href="/auth/login">Login</a>
-  <a href="/auth/login">Sign Up</a>
-</div>
+    <a class="active" href="/">Home</a>
+    <a href="/auth/login">Login</a>
+    <a href="/auth/login">Sign Up</a>
+  </div>
   <!--The div element for the map -->
   <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-<div id="map"></div>
+  <div id="map"></div>
 
 
-<img src="ORvan-copy.png" alt="">
+  <img src="ORvan-copy.png" alt="">
 
   <div class="plan-trip">
     <h1>Plan Trip</h1>
@@ -190,6 +196,21 @@
 
   <div class="about">
     <h1>About Open Road</h1>
+
+    <h3>The goal of everyone at Open Road is to provide a superbly well organized and personalized road trip platform that will inspire, replenish and astonish our customers for a price that is considered outstanding value for money no matter the budget. We will offer outstanding service, whether the customer is pre-tour, on tour or having returned home. Our team will always thrive to make sure that your next trip is a success!</h3></br>
+
+   <div class="team">
+     <h2>Meet Our Team</h2>
+
+     <h3>Ben</h3>
+     <img id="ben" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/23722685_1261452767293149_7718071139823405297_n.jpg?_nc_cat=110&_nc_ht=scontent-dfw5-1.xx&oh=9cea775e2b5ba5523250cc9e8618c709&oe=5C51F0B0" alt="">
+     <h4>Meet Ben, our lead developer, who loves to be on the open road. He never turns down a road trip. Like, ever. Just ask him yourself. He can never say no! Ben really loves traveling to national parks and the occasional winery tour. If you're not sure about your next trip, reach out to him for any suggestions. On a technical aspect, Ben has a true passion for front-end development and is always willing to lend a hand or any expertise. </h4>
+
+     <h3>Julian</h3>
+     <img id="julian" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/11260942_10152949371377877_5830480938459649491_n.jpg?_nc_cat=111&_nc_ht=scontent-dfw5-1.xx&oh=1ee0c65d6d6fbd84ddeb55f25e14daa9&oe=5C83B68E" alt="">
+     <h4>Meet Julian, our 2nd in command. When he's not working on new changes for our site, he's climbing the nearest mountain or deep down his favorite hiking trail. He has tons of recommendations for camping spots, desert treks, and the coolest brewery tours around! Julian's tech passion is the back-end. Feel free to reach out to him if you have any questions.</h4>
+   </div>
+
   </div>
   <hr>
 
