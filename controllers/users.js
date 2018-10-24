@@ -44,7 +44,7 @@ router.get('/:id', (req, res)=>{
 // Route to update(edit)
 router.get('/:id/edit', (req, res) => {
   // if(req.session.logged === true){
-    User.findById(req.params.id, (err, editUser) => {
+    User.findById(req.params.id, req.body, (err, editUser) => {
       res.render('users/edit.ejs', {
         users: editUser
       })
@@ -54,13 +54,20 @@ router.get('/:id/edit', (req, res) => {
   // }
 })
 
+
+
 // Route to add updated User to page
 router.put('/:id', (req, res) => {
-  User.findByIdAndUpdate(req.params.id, req.body, (err, updateUser) => {
-    res.redirect('/users');
+  User.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updateUser) => {
+    res.redirect('/users/');
   });
 });
-
+// Delete route for user
+router.delete('/:id', (req, res) => {
+  User.findOneAndDelete(req.params.id, (err, deletedTrip) => {
+    res.redirect('/users/')
+  })
+})
 
 
 
