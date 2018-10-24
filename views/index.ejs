@@ -2,9 +2,17 @@
 <html>
 
 <head>
-  <%# <script src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script> %>
-  <style>
-
+    <%# <script src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script> %>
+    <style>
+        html, body {
+            margin:auto;
+          background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-665023.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+          height: 100%;
+  position: absolute;
+}
   h1 {
     font-family: 'BioRhyme', serif;
   }
@@ -16,6 +24,7 @@
   #map {
     width: 100%;
     height: 600px;
+    padding: 5px;
 }
 .controls {
     margin-top: 10px;
@@ -140,131 +149,136 @@
 
 
   </style>
-  <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
-  <header>
+    <header>
 
-    <h1>Welcome to the Open Road</h1>
-  </header>
+        <h1>Welcome to the Open Road</h1>
+    </header>
 
-  <div class="topnav">
-  <a class="active" href="/">Home</a>
-  <a href="">Login</a>
-  <a href="">Sign Up</a>
-</div>
-  <!--The div element for the map -->
-  <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-<div id="map"></div>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="">Login</a>
+        <a href="">Sign Up</a>
+    </div>
+    <!--The div element for the map -->
+    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+    <div id="map"></div>
 
 
-<img src="ORvan-copy.png" alt="">
+    <!--<img src="ORvan-copy.png" alt="">-->
 
-  <div class="plan-trip">
-    <h1>Plan Trip</h1>
-  </div>
-  <hr>
+    <div class="plan-trip">
+        <h1>Plan Trip</h1>
+    </div>
+    <hr>
 
-  <div class="browse-trip">
-    <h1>Browse Trips</h1>
-  </div>
-  <hr>
+    <div class="browse-trip">
+        <h1>Browse Trips</h1>
+    </div>
+    <hr>
 
-  <div class="staff-favs">
-    <h1>Staff Favorites</h1>
-  </div>
-  <hr>
+    <div class="staff-favs">
+        <h1>Staff Favorites</h1>
+    </div>
+    <hr>
 
-  <div class="about">
-    <h1>About Open Road</h1>
-  </div>
-  <hr>
+    <div class="about">
+        <h1>About Open Road</h1>
+    </div>
+    <hr>
 
-  <div class="contact">
-    <footer>
-      <h1>Contact<h1>
-    </footer>
-  </div>
+    <div class="contact">
+        <footer>
+            <h1>Contact<h1>
+        </footer>
+    </div>
 
-  <script>
-  function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 31.67754321, lng: -98.5089314},
-    zoom: 6
-  });
-  var input = document.getElementById('searchInput');
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: 31.67754321,
+                    lng: -98.5089314
+                },
+                zoom: 6
+            });
+            var input = document.getElementById('searchInput');
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  var autocomplete = new google.maps.places.Autocomplete(input);
-  autocomplete.bindTo('bounds', map);
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            autocomplete.bindTo('bounds', map);
 
-  var infowindow = new google.maps.InfoWindow();
-  var marker = new google.maps.Marker({
-      map: map,
-      anchorPoint: new google.maps.Point(0, -29)
-  });
+            var infowindow = new google.maps.InfoWindow();
+            var marker = new google.maps.Marker({
+                map: map,
+                anchorPoint: new google.maps.Point(0, -29)
+            });
 
-  autocomplete.addListener('place_changed', function() {
-      infowindow.close();
-      marker.setVisible(false);
-      var place = autocomplete.getPlace();
-      if (!place.geometry) {
-          window.alert("Autocomplete's returned place contains no geometry");
-          return;
-      }
+            autocomplete.addListener('place_changed', function() {
+                infowindow.close();
+                marker.setVisible(false);
+                var place = autocomplete.getPlace();
+                if (!place.geometry) {
+                    window.alert("Autocomplete's returned place contains no geometry");
+                    return;
+                }
 
-      // If the place has a geometry, then present it on a map.
-      if (place.geometry.viewport) {
-          map.fitBounds(place.geometry.viewport);
-      } else {
-          map.setCenter(place.geometry.location);
-          map.setZoom(12);
-      }
-      marker.setIcon(({
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(35, 35)
-      }));
-      marker.setPosition(place.geometry.location);
-      marker.setVisible(true);
+                // If the place has a geometry, then present it on a map.
+                if (place.geometry.viewport) {
+                    map.fitBounds(place.geometry.viewport);
+                } else {
+                    map.setCenter(place.geometry.location);
+                    map.setZoom(12);
+                }
+                marker.setIcon(({
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(35, 35)
+                }));
+                marker.setPosition(place.geometry.location);
+                marker.setVisible(true);
 
-      var address = '';
-      if (place.address_components) {
-          address = [
-            (place.address_components[0] && place.address_components[0].short_name || ''),
-            (place.address_components[1] && place.address_components[1].short_name || ''),
-            (place.address_components[2] && place.address_components[2].short_name || '')
-          ].join(' ');
-      }
+                var address = '';
+                if (place.address_components) {
+                    address = [
+                        (place.address_components[0] && place.address_components[0].short_name || ''),
+                        (place.address_components[1] && place.address_components[1].short_name || ''),
+                        (place.address_components[2] && place.address_components[2].short_name || '')
+                    ].join(' ');
+                }
 
-      infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-      infowindow.open(map, marker);
+                infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+                infowindow.open(map, marker);
 
-      //Location details
-      for (var i = 0; i < place.address_components.length; i++) {
-          if(place.address_components[i].types[0] == 'postal_code'){
-              document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
-          }
-          if(place.address_components[i].types[0] == 'country'){
-              document.getElementById('country').innerHTML = place.address_components[i].long_name;
-          }
-      }
-      document.getElementById('location').innerHTML = place.formatted_address;
-      document.getElementById('lat').innerHTML = place.geometry.location.lat();
-      document.getElementById('lon').innerHTML = place.geometry.location.lng();
-  });
-}
-  </script>
-  <!--Load the API from the specified URL
+                //Location details
+                for (var i = 0; i < place.address_components.length; i++) {
+                    if (place.address_components[i].types[0] == 'postal_code') {
+                        document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
+                    }
+                    if (place.address_components[i].types[0] == 'country') {
+                        document.getElementById('country').innerHTML = place.address_components[i].long_name;
+                    }
+                }
+                document.getElementById('location').innerHTML = place.formatted_address;
+                document.getElementById('lat').innerHTML = place.geometry.location.lat();
+                document.getElementById('lon').innerHTML = place.geometry.location.lng();
+            });
+        }
+
+    </script>
+    <!--Load the API from the specified URL
     * The async attribute allows the browser to render the page while the API loads
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJq8KQKS8pry66L5fJPWHWPm9Mbfc5KaI&callback=initMap&libraries=places">
-  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJq8KQKS8pry66L5fJPWHWPm9Mbfc5KaI&callback=initMap&libraries=places">
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Profile Creation</h1>
+      <h3 id="logout">Logout</h3>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/users/show">Edit your Profile</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <main>
+        <h2>Profile Information</h2>
+        <ul>
+      <%  for ( let i = 0; i < users.length; i++ ) { %>
+        <li>
+          <%=  users[i].name %> </br>
+          <form action="/users/<%=users[i].id%>" method="GET">
+            <input type="submit" value="Submit">
+            
+        </form>
+      </li>
+    <%    } %>
+  </ul>
+     <main>
+        <form action="/users" method="POST">
+
+            <label for="">Name</label>
+            <br />
+
+            <input type="text" name="name" /><br />
+              <label for="">Password</label>
+            <br />
+
+            <input type="text" name="passWord" /><br />
+            <label for="">Age</label></br>
+            <input type="number" name="age" /><br />
+            <label for="">What Kind of car do you drive?</label>
+            <br />
+
+            <input type="text" name="carModel" /><br />
+            <label for="">Do you travel with pets?</label>
+            <br />
+
+            <input type="radio" name="petCheck" /><br />
+      
+
+            <input type="submit" value="Create New Profile" /></br>
+        </form>
+      </main>
+  </body>
+</html>
+
