@@ -1,0 +1,31 @@
+html, body {
+     font-family: 'Raleway', sans-serif;
+}
+.plan-trip {
+    background-color: aqua
+}
+.browse-trip {
+    background-color: blue
+}
+.staff-favs {
+   background-color: chartreuse
+}
+.about {
+    background-color: darkorange
+}
+.contact {
+    background-color: firebrick
+} 
+.container {
+    
+}
+.navbar-static-top {
+    
+}
+.justify {
+    display: flex;
+    align-self: auto;
+}
+.topnav {
+    font-family: 'BioRhyme', serif;
+}
