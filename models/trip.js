@@ -9,7 +9,7 @@ const tripSchema = new mongoose.Schema({
   extraDetails: String,
   pic1: {type: String, required: true},
   pic2: {type: String, required: true},
-  pic3: {type: String, required: true},
+  pic3: {type: String, required: true}
 });
 
 
