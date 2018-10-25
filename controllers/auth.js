@@ -28,4 +28,48 @@ router.post('/register', async (req, res) => {
   res.redirect('/users');
 });
 
+// Make a POST route for login
+router.post('/login', async (req, res) => {
+  //first query the database to see if the user exists
+  try {
+          const foundUser = await Auth.findOne({username: req.body.username});
+          console.log(foundUser)
+
+          if(foundUser){
+          // if the users exists use the bcrypt compare password
+          //to make sure the passwords match
+            if(bcrypt.compareSync(req.body.password, foundUser.password)){
+              req.session.logged = true;
+
+              res.redirect('/users')
+            } else {
+
+              req.session.message = 'Username or Password is Wrong';
+              res.redirect('/auth/login')
+            }
+
+
+        } else {
+              req.session.message = 'Username or Password is Wrong';
+              res.redirect('/auth/login')
+        } // end of foundUser
+
+  } catch(err) {
+    res.send('error')
+  }
+});
+
+
+// Make a logout route
+router.get('/logout', (req, res) => {
+
+  req.session.destroy((err) => {
+    if(err){
+      res.send(err);
+    } else {
+      res.redirect('/auth/login')
+    }
+  });
+});
+
 module.exports = router;

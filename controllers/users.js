@@ -43,18 +43,18 @@ router.get('/:id', (req, res)=>{
 
 // Route to update(edit)
 router.get('/:id/edit', (req, res) => {
-  // if(req.session.logged === true){
+  if(req.session.logged === true){
     User.findById(req.params.id, req.body, (err, editUser) => {
       res.render('users/edit.ejs', {
         users: editUser
       })
     })
-  // } else {
-    // res.redirect('/auth/login')
-  // }
+  } else {
+  req.session.message = 'You have to be logged in to edit an user';
+  res.redirect('/auth/login');
+}
+
 })
-
-
 
 // Route to add updated User to page
 router.put('/:id', (req, res) => {

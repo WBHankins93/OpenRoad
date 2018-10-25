@@ -5,10 +5,16 @@ const methodOverride = require('method-override');
 const usersController = require('./controllers/users')
 const tripController = require('./controllers/trip');
 const authController = require('./controllers/auth');
+const session        = require('express-session');
 // Require our database
 require('./db/db');
 
-// Require our controller
+
+app.use(session({
+  secret: 'This is some random secret string',
+  resave: false,
+  saveUninitialized: false
+}));
 
 // Apply middleware here
 app.use(express.static('public'));
