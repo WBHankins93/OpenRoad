@@ -62,10 +62,26 @@ router.put('/:id', (req, res) => {
     res.redirect('/users/');
   });
 });
+
+
 // Delete route for user
 router.delete('/:id', (req, res) => {
-  User.findOneAndDelete(req.params.id, (err, deletedTrip) => {
-    res.redirect('/users/')
+  User.findOneAndDelete(req.params.id, (err, deletedUser) => {
+
+    //create a variable for our tripIds
+    const tripIds = [];
+    for(let i=0; i < deletedUser.trips.length; i++) {
+      tripIds.push(deletedUser.articles[i].id);
+    }
+
+    // We want to remove the tripIds from the User collection
+    User.deleteMany({
+      _id: {
+        $in: tripIds
+      }
+    }, (err, data) => {
+      res.redirect('/users/')
+    })
   })
 })
 
