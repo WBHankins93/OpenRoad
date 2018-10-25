@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const User = require('../models/users');
 
 const tripSchema = new mongoose.Schema({
   name: {type: String, required: true},
@@ -10,7 +11,10 @@ const tripSchema = new mongoose.Schema({
   extraDetails: String,
   pic1: {type: String, required: true},
   pic2: {type: String, required: true},
-  pic3: {type: String, required: true}
+  pic3: {type: String, required: true},
+  founderName: String,
+  founderId: String
+  // users: [User.schema]
 });
 
 

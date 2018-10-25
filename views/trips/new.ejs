@@ -25,6 +25,15 @@
       <h3>Plan A Trip</h3>
       <br/>
 
+      <select name="tripIds">
+        <% for (let i=0; i < users.length; i++) { %>
+          <option value="<%=users[i].id%>"><%=users[i].name%></option>
+        <% } %>
+      </select>
+
+      <label for="">User</label></br>
+
+    </br>
       <label for="">Pictures of your Plans</label>
       <br/>
       <input type="text" name="pic1" /><br/>
