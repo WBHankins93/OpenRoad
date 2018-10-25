@@ -6,7 +6,10 @@ const tripSchema = new mongoose.Schema({
   cityEnd: {type: String, required: true},
   theme: String,
   tripReason: {type: String, required: true},
-  extraDetails: String
+  extraDetails: String,
+  pic1: {type: String, required: true},
+  pic2: {type: String, required: true},
+  pic3: {type: String, required: true},
 });
 
 
