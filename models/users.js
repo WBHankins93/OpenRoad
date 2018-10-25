@@ -6,7 +6,9 @@ const userSchema = new mongoose.Schema({
   profilePic: {type: String, required: true},
   age: {type: Number, required: true},
   carModel: String,
-  
+  favTrip: String,
+  petCheck: String,
+  hobby: String
 });
 
 

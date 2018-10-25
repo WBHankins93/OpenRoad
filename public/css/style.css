@@ -2,18 +2,23 @@ html, body {
      font-family: 'Raleway', sans-serif;
 }
 .plan-trip {
+    font-family: 'BioRhyme', serif;
     background-color: aqua
 }
 .browse-trip {
+    font-family: 'BioRhyme', serif;
     background-color: blue
 }
 .staff-favs {
+    font-family: 'BioRhyme', serif;
    background-color: chartreuse
 }
 .about {
+    font-family: 'BioRhyme', serif;
     background-color: darkorange
 }
 .contact {
+    font-family: 'BioRhyme', serif;
     background-color: firebrick
 } 
 .container {
