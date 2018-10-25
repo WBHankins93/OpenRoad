@@ -41,7 +41,12 @@
 
       <h2>Trips:</h2></br>
 
-      
+      <% for (let i=0; i < trips.length; i++) { %>
+
+        <a href="/trip/<%=trips[i].id%>"><%=trips[i].name%></a>
+
+      <% } %>
+
 
     </section>
     <section>

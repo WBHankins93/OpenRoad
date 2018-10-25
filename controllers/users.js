@@ -32,12 +32,19 @@ router.post('/', (req, res) => {
 })
 
 // Route to User show page
-router.get('/:id', (req, res)=>{
-  User.findById(req.params.id, (err, foundUser)=>{
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id, (err, foundUser) => {
     res.render('./users/show.ejs', {
+      trips: foundUser.trips,
       users: foundUser
-    });
-  });
+    })
+  // User.findOne(req.body, (err, foundUser) => {
+  //   res.render('./users/show.ejs', {
+  //     trips: foundTrip,
+  //     users: foundUser
+  //   });
+  // });
+});
 });
 
 

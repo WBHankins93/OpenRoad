@@ -29,7 +29,13 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
   User.findById(req.body.tripIds, (err, foundUser) => {
     Trip.create(req.body, (err, createdTrip) => {
+
+      // console.log(foundUser);
+      // createdTrip.founderName = foundUser.name;
+      // createdTrip.founderId = foundUser.id;
+
       foundUser.trips.push(createdTrip);
+      console.log(foundUser);
       foundUser.save((err, data) => {
         res.redirect('/users')
       })
@@ -42,14 +48,19 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
   console.log(req.params.id);
   Trip.findById(req.params.id, (err, foundTrip) => {
-    User.findOne({
-      'trips._id': req.params.id
-    }, (err, foundUser) => {
-      res.render('trips/show.ejs', {
-        trip: foundTrip,
-        users: foundUser
-      });
+    console.log(foundTrip);
+    res.render('trips/show.ejs', {
+      trip: foundTrip
     });
+    // User.findOne({
+    //   'trips._id': req.id
+    // }, (err, foundUser) => {
+    //   console.log(foundUser, ' this is foundUser')
+    //   res.render('trips/show.ejs', {
+    //     trip: foundTrip,
+    //     users: foundUser
+    //   });
+    // });
   })
 })
 
