@@ -3,7 +3,7 @@
 ### Our application is focused on finding and planning trips within the state of Texas. 
 #### The main focus of Open Road is to allow road trip enthusiasts to get travel ideas and plan their next getaway throughout the state of Texas.
 
-
+![mainHome](images/mainHome.png)
 
 #### User Experiences
 - user should be able to create and edit trip pages
