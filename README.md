@@ -31,5 +31,9 @@
 - Figure out how to allow user to get directions from point to point
 - Calculate trip cost estimates
 
+### Code Frustration:
+- Several issues with Google Maps API. Maps works fine, but had problems trying to incorporate Directions API into Maps in attempt to give directions from one point to the next
+
+
 
 
