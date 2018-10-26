@@ -32,12 +32,19 @@ router.post('/', (req, res) => {
 })
 
 // Route to User show page
-router.get('/:id', (req, res)=>{
-  User.findById(req.params.id, (err, foundUser)=>{
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id, (err, foundUser) => {
     res.render('./users/show.ejs', {
+      trips: foundUser.trips,
       users: foundUser
-    });
-  });
+    })
+  // User.findOne(req.body, (err, foundUser) => {
+  //   res.render('./users/show.ejs', {
+  //     trips: foundTrip,
+  //     users: foundUser
+  //   });
+  // });
+});
 });
 
 
@@ -56,19 +63,41 @@ router.get('/:id/edit', (req, res) => {
 
 })
 
+// // Route to add updated User to page
+// router.put('/:id', (req, res) => {
+//   User.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updateUser) => {
+//     res.redirect('/users/');
+//   });
+// });
+
+
+// Delete route for user
+router.delete('/:id', (req, res) => {
+  User.findOneAndDelete(req.params.id, (err, deletedUser) => {
+
+    //create a variable for our tripIds
+    const tripIds = [];
+    for(let i=0; i < deletedUser.trips.length; i++) {
+      tripIds.push(deletedUser.articles[i].id);
+    }
+
+    // We want to remove the tripIds from the User collection
+    User.deleteMany({
+      _id: {
+        $in: tripIds
+      }
+    }, (err, data) => {
+      res.redirect('/users/')
+    })
+  })
+})
+
 // Route to add updated User to page
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updateUser) => {
     res.redirect('/users/');
   });
 });
-// Delete route for user
-router.delete('/:id', (req, res) => {
-  User.findOneAndDelete(req.params.id, (err, deletedTrip) => {
-    res.redirect('/users/')
-  })
-})
-
 
 
 module.exports = router;

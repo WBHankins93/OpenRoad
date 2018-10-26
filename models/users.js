@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Trip = require('../models/trip');
 
 const userSchema = new mongoose.Schema({
   name: {type: String, required: true},
@@ -8,7 +9,8 @@ const userSchema = new mongoose.Schema({
   carModel: String,
   favTrip: String,
   petCheck: String,
-  hobby: String
+  hobby: String,
+  trips: [Trip.schema]
 });
 
 
