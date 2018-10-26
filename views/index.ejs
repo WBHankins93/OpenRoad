@@ -5,135 +5,77 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Raleway" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <nav class="nav navbar navbar-inverse navbar-fixed-top">
-        <div class="topnav">
-            <a class="navbar-brand navbar-dark" href="/">
-                <img src="./images/ORvan-copy.png" alt="Logo" style="width:82px;">Open Road</a>
-                 </div>
+    <div class="container">
+        <nav class="navbar navbar-dark fixed-top justify-content-end">
+            <div class="topnav col">
+                <a class="navbar-brand" href="/">
+                    <img src="./images/VanLogo.png" alt="Logo" style="width:82px;">Open Road
+            </div>
+            <div class="logo2 col">
+                <a class="navbar-brand" href="">
+                    <img src="./images/orLogo.png" alt="Logo" style="width:82px;" class="logo2"></a>
+            </div>
             <a button type="button" class="btn btn-light justify" href="/auth/login">Login</a>
             <a button type="button" class="btn btn-light justify" href="/auth/login">Sign Up</a>
-    </nav>
-    <header class="col">
- <style>
-        html, body {
-          font-family: 'Raleway', sans-serif;
-            margin:auto;
-          background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-665023.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            width: 100%;
-          height: 100%;
-  position: absolute;
-}
-  h1 {
-    font-family: 'BioRhyme', serif;
-  }
+        </nav>
+        <header class="col">
+        </header>
 
-  a {
-    font-family: 'Raleway', sans-serif;
-  }
+        <div class="col">
 
-  #map {
-    width: 100%;
-    height: 600px;
-    padding: 5px;
-}
-.controls {
-    margin-top: 10px;
-    border: 1px solid transparent;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    height: 32px;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-#searchInput {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-    margin-left: 12px;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 50%;
-}
-#searchInput:focus {
-    border-color: #4d90fe;
-}
-#ben, #julian {
-  max-width: 400px;
-  max-height: 420px;
-}
-
-    hr {
-    border: none;
-    border-top: 3px double #333;
-    color: #333;
-    overflow: visible;
-    text-align: center;
-    height: 5px;
-    margin: 0 auto;
-}
-
-  </style>
-    </header>
+            <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+            <div id="map"></div>
+        </div>
+            <div class="plan-trip col">
+                <a button type="btn" name="button" class="btn btn-block btn-secondary" href="/trip/new">Plan Trip</a></button>
+            </div>
+        <hr>
+            <div class="browse-trip col">
+                <a button type="btn" name="button" class="btn btn-block btn-secondary" href="/trip">Browse trips</a></button>
+            </div>
     
-    <div class="col">
 
-    <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-    <div id="map"></div>
-    </div>
-
-    <img src="ORvan-copy.png" alt="">
-
-    <div class="plan-trip col">
-        <h1>Plan Trip</h1>
-        <button type="button" name="button" class="btn btn-light"><a href="/trip/new">Create Your Trip Today</a></button>
-    </div>
-    <hr>
-
-    <div class="browse-trip col">
-        <h1>Browse Trips</h1>
-        <button type="button" name="button" class="btn btn-light"><a href="/trip">Browse</a></button>
-    </div>
+        <!--
     <hr>
 
     <div class="staff-favs col">
         <h1>Staff Favorites</h1>
     </div>
     <hr>
+-->
 
-    <div class="about col">
-        <h1>About Open Road</h1>
+        <div class="about col">
+            <h1 class="aboutR">About Open Road</h1>
 
-        <h3>The goal of everyone at Open Road is to provide a superbly well organized and personalized road trip platform that will inspire, replenish and astonish our customers for a price that is considered outstanding value for money no matter the budget. We will offer outstanding service, whether the customer is pre-tour, on tour or having returned home. Our team will always thrive to make sure that your next trip is a success!</h3></br>
+            <h3>The goal of everyone at Open Road is to provide a superbly well organized and personalized road trip platform that will inspire, replenish and astonish our customers for a price that is considered outstanding value for money no matter the budget. We will offer outstanding service, whether the customer is pre-tour, on tour or having returned home. Our team will always thrive to make sure that your next trip is a success!</h3></br>
+            <h2 id="team">Meet Our Team</h2>
+            <ul class="team row">
+                <div class="col">
+                    <h3>Ben</h3>
+                    <img class="col" id="ben" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/23722685_1261452767293149_7718071139823405297_n.jpg?_nc_cat=110&_nc_ht=scontent-dfw5-1.xx&oh=9cea775e2b5ba5523250cc9e8618c709&oe=5C51F0B0" alt="">
+                    <h4>Meet Ben, our lead developer, who loves to be on the open road. He never turns down a road trip. Like, ever. Just ask him yourself. He can never say no! Ben really loves traveling to national parks and the occasional winery tour. If you're not sure about your next trip, reach out to him for any suggestions. On a technical aspect, Ben has a true passion for front-end development and is always willing to lend a hand or any expertise. </h4>
+                </div>
+                <div class="col">
+                    <h3>Julian</h3>
+                    <img class="col" id="julian" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/11260942_10152949371377877_5830480938459649491_n.jpg?_nc_cat=111&_nc_ht=scontent-dfw5-1.xx&oh=1ee0c65d6d6fbd84ddeb55f25e14daa9&oe=5C83B68E" alt="">
+                    <h4>Meet Julian, our 2nd in command. When he's not working on new changes for our site, he's climbing the nearest mountain or deep down his favorite hiking trail. He has tons of recommendations for camping spots, desert treks, and the coolest brewery tours around! Julian's tech passion is the back-end. Feel free to reach out to him if you have any questions.</h4>
+                </div>
+            </ul>
 
-        <div class="team">
-            <h2>Meet Our Team</h2>
-
-            <h3>Ben</h3>
-            <img id="ben" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/23722685_1261452767293149_7718071139823405297_n.jpg?_nc_cat=110&_nc_ht=scontent-dfw5-1.xx&oh=9cea775e2b5ba5523250cc9e8618c709&oe=5C51F0B0" alt="">
-            <h4>Meet Ben, our lead developer, who loves to be on the open road. He never turns down a road trip. Like, ever. Just ask him yourself. He can never say no! Ben really loves traveling to national parks and the occasional winery tour. If you're not sure about your next trip, reach out to him for any suggestions. On a technical aspect, Ben has a true passion for front-end development and is always willing to lend a hand or any expertise. </h4>
-
-            <h3>Julian</h3>
-            <img id="julian" src="https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/11260942_10152949371377877_5830480938459649491_n.jpg?_nc_cat=111&_nc_ht=scontent-dfw5-1.xx&oh=1ee0c65d6d6fbd84ddeb55f25e14daa9&oe=5C83B68E" alt="">
-            <h4>Meet Julian, our 2nd in command. When he's not working on new changes for our site, he's climbing the nearest mountain or deep down his favorite hiking trail. He has tons of recommendations for camping spots, desert treks, and the coolest brewery tours around! Julian's tech passion is the back-end. Feel free to reach out to him if you have any questions.</h4>
         </div>
 
-    </div>
-
-    <div class="contact">
-        <footer>
-            <h1>Contact<h1>
-        </footer>
+        <div class="contact">
+            <footer>
+                <h1>Contact<h1>
+            </footer>
+        </div>
     </div>
     <script>
         function initMap() {
@@ -208,6 +150,7 @@
                 document.getElementById('lon').innerHTML = place.geometry.location.lng();
             });
         }
+
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJq8KQKS8pry66L5fJPWHWPm9Mbfc5KaI&callback=initMap&libraries=places">
     </script>

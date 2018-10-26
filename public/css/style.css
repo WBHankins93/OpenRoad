@@ -1,36 +1,119 @@
-html, body {
+ body {
      font-family: 'Raleway', sans-serif;
-}
-.plan-trip {
-    font-family: 'BioRhyme', serif;
-    background-color: aqua
-}
-.browse-trip {
-    font-family: 'BioRhyme', serif;
-    background-color: blue
-}
-.staff-favs {
-    font-family: 'BioRhyme', serif;
-   background-color: chartreuse
-}
-.about {
-    font-family: 'BioRhyme', serif;
-    background-color: darkorange
-}
-.contact {
-    font-family: 'BioRhyme', serif;
-    background-color: firebrick
-} 
-.container {
+     margin: auto;
+     background-image: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-665023.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     background-attachment: fixed;
+ }
+
+ .plan-trip {
+     font-family: 'BioRhyme', serif;
+ }
+
+ .browse-trip {
+     font-family: 'BioRhyme', serif;
+ }
+
+ .staff-favs {
+     font-family: 'BioRhyme', serif;
+ }
+
+ .about {
+     font-family: 'BioRhyme', serif;
+ }
+
+ .contact {
+     font-family: 'BioRhyme', serif;
+ }
+
+ .btn {
+     font-family: 'BioRhyme', serif;
+     align-self: stretch;
+ }
+
+ .aboutR {
+     align-self: center;
+ }
+
+ #team {
+     align-self: center;
+ }
+
+ .navbar {
+     position: sticky;
+     top: 0;
+     background-color: azure;
+     opacity: .88;
+ }
+
+ .justify {
+     display: flex;
+     align-self: auto;
+ }
+.aboutR {
     
 }
-.navbar-static-top {
-    
-}
-.justify {
-    display: flex;
-    align-self: auto;
-}
-.topnav {
-    font-family: 'BioRhyme', serif;
-}
+ .topnav {
+     font-family: 'BioRhyme', serif;
+ }
+
+ #searchInput:focus {
+     border-color: #4d90fe;
+ }
+
+ h1 {
+     font-family: 'Raleway', sans-serif;
+ }
+
+ a {
+     font-family: 'Raleway', sans-serif;
+     color: darkgray;
+ }
+
+ .navbar-dark .navbar-brand {
+     color: #bdbbbb;
+     text-shadow: 0px -1px grey;
+ }
+
+ #map {
+     width: 100%;
+     height: 600px;
+     padding: 10px;
+     margin-top: 105px;
+ }
+
+ .controls {
+     margin-top: 10px;
+     border: 1px solid transparent;
+     border-radius: 2px 0 0 2px;
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     height: 32px;
+     outline: none;
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+ }
+
+ #searchInput {
+     background-color: #fff;
+     font-family: Roboto;
+     font-size: 15px;
+     font-weight: 300;
+     margin-left: 12px;
+     padding: 0 11px 0 13px;
+     text-overflow: ellipsis;
+     width: 50%;
+ }
+
+ hr {
+     border: none;
+     border-top: 3px double #333;
+     color: #333;
+     overflow: visible;
+     text-align: center;
+     height: 5px;
+     margin: 0 auto;
+ }
