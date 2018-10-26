@@ -85,19 +85,38 @@ router.put('/:id', (req, res) => {
 })
 
 // Make a delete route for trips
-router.delete('/:id', (req, res) => {
-  Trip.findOneAndRemove(req.params.id, (err, deletedTrip) => {
-    Author.findOne({
-      'trips._id': req.params.id
-    }, (err, foundUser) => {
+router.delete('/:id', async (req, res) => {
+  try {
 
-      foundUser.trips.id(req.params.id).remove();
-      foundUser.save((err, data) => {
-        res.redirect('/trips');
-      });
-    })
-  })
-})
+    const deletedTrip = await Trip.findOneAndRemove(req.params.id);
+    const foundUser = await User.findOne({'trips._id': req.params.id});
+
+    console.log(foundUser);
+    foundUser.trips.id(req.params.id).remove();
+    console.log(foundUser);
+    foundUser.save((err, data) => {
+            res.redirect('/trip');
+          });
+
+
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+//
+// router.delete('/:id', async (req, res) => {
+//   Trip.findOneAndRemove(req.params.id, (err, deletedTrip) => {
+//     User.findOne({'trips._id': req.params.id}, (err, foundUser) => {
+//       console.log(foundUser);
+//       foundUser.trips.id(req.params.id).remove();
+//       console.log(foundUser);
+//       foundUser.save((err, data) => {
+//         res.redirect('/trip');
+//       });
+//     })
+//   })
+// })
 
 
 
