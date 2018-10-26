@@ -41,24 +41,21 @@
 
       <h2>Trips:</h2></br>
 
-<<<<<<< HEAD
-      <section>
       <ul>
-        <%for (let i = 0; i < users.trips.length; i++) {%>
-          <li><a href="/users/<%=users.trips[i].id%>"><%=users.trips[i].name%></a></li>
-       <% }%>
+        <li>
+          <% for (let i=0; i < trips.length; i++) { %>
+
+          <a href="/trip/<%=trips[i].id%>"><%=trips[i].name%></a>
+
+          <% } %>
+        </li>
       </ul>
-    </section>
-=======
-      <% for (let i=0; i < trips.length; i++) { %>
 
-        <a href="/trip/<%=trips[i].id%>"><%=trips[i].name%></a>
 
-      <% } %>
 
->>>>>>> Ben-Main
 
     </section>
+    </br>
     <section>
       <a href="/users/<%=users.id%>/edit">Edit</a>
     </section>

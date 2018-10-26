@@ -63,12 +63,12 @@ router.get('/:id/edit', (req, res) => {
 
 })
 
-// Route to add updated User to page
-router.put('/:id', (req, res) => {
-  User.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updateUser) => {
-    res.redirect('/users/');
-  });
-});
+// // Route to add updated User to page
+// router.put('/:id', (req, res) => {
+//   User.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updateUser) => {
+//     res.redirect('/users/');
+//   });
+// });
 
 
 // Delete route for user
@@ -92,6 +92,12 @@ router.delete('/:id', (req, res) => {
   })
 })
 
+// Route to add updated User to page
+router.put('/:id', (req, res) => {
+  User.findByIdAndUpdate(req.params.id, req.body, { new:true }, (err, updateUser) => {
+    res.redirect('/users/');
+  });
+});
 
 
 module.exports = router;
