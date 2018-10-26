@@ -122,3 +122,9 @@
      height: 5px;
      margin: 0 auto;
  }
+
+.u {
+  background-color: black;
+  color: white;
+  border: solid 2px white;
+}
