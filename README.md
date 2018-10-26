@@ -9,9 +9,8 @@
 - user able to upload images for trips past and future
 - user should be able rate past trips
 
-| URL  | HTTP Verb | Action | Description |
-| ------------- | ------------- | -----------  | ----------- |
-| Content Cell  | Content Cell  | content cell |             |
-| Content Cell  | Content Cell  | content cell |             |
+### Link to site
 
-#+html: <p align="center"><img src="path/to/file" /></p>
+
+#+html: <p align="center"><img src="Desktop/mainHome" /></p>
+
