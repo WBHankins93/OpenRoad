@@ -6,6 +6,10 @@ const usersController = require('./controllers/users')
 const tripController = require('./controllers/trip');
 const authController = require('./controllers/auth');
 const session        = require('express-session');
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/openRoad2';
+var port = process.env.PORT || 3000;
+
+mongoose.connect(mongoUri);
 // Require our database
 require('./db/db');
 
@@ -32,6 +36,7 @@ app.get('/', (req, res) => {
   res.render('index.ejs')
 })
 
-app.listen(3000, (req, res) => {
-  console.log('Ayyyyy Im workin here')
-});
+app.listen(port);
+console.log('---------------------------------');
+console.log('Server running on port: ' + port);
+console.log('---------------------------------');
