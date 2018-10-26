@@ -127,4 +127,9 @@
   background-color: black;
   color: white;
   border: solid 2px white;
+  align-items: center;
+}
+
+div.col {
+  border: solid 2px white;
 }
