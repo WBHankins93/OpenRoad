@@ -12,5 +12,5 @@
 ### Link to site
 
 
-#+html: <p align="center"><img src="openRoad/public/images/mainHome.png" /></p>
+#+html: <p align="center"><img src="/public/images/mainHome.png" /></p>
 
