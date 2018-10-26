@@ -80,8 +80,10 @@
  }
 
  .navbar-dark .navbar-brand {
-     color: #bdbbbb;
-     text-shadow: 0px -1px grey;
+     /* color: #bdbbbb;
+     text-shadow: 0px -1px grey; */
+     color: white;
+    text-shadow: 2px 2px 4px #000000;
  }
 
  #map {
@@ -132,4 +134,35 @@
 
 div.col {
   border: solid 2px white;
+  background: azure;
+  opacity: .9;
+}
+
+.userCss {
+  background: grey;
+  max-width: 300px;
+  margin-left: 100px;
+  border: solid 4px white;
+  text-align: center;
+  display: inline-block;
+}
+
+.loginForm {
+  background: black;
+}
+
+.tourCSS {
+  background-color: azure;
+  text-align: left;
+  column-count: 2;
+  margin: 25px;
+  border: 5px solid black;
+}
+
+.createCSS {
+  background: grey;
+}
+
+li {
+  list-style-type: none;
 }

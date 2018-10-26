@@ -26,9 +26,9 @@
     </header>
       <main>
         <h2>List of Trips</h2>
-        <ul>
+        <ul class="row">
       <%  for ( let i = 0; i < trips.length; i++ ) { %>
-        <li>
+        <li class="col-3 u">
           <%=  trips[i].name %> </br>
           <form action="/trip/<%=trips[i].id%>" method="GET">
             <input type="submit" value="View Trip">
@@ -37,6 +37,6 @@
     <%    } %>
   </ul>
       </main>
-       ```<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">```
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </body>
 </html>
