@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <header>
-      <h1>Profile Page</h1>
-      <h3>Welcome</h3>
-      <nav>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/users/new">Create New User</a>
-          </li>
-          <li><a href="/auth/logout">Logout</a></li>
-        </ul>
-      </nav>
-    </header>
-      <main>
-        <h2>Users</h2>
-        <ul>
-      <%  for ( let i = 0; i < users.length; i++ ) { %>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=BioRhyme%7CRaleway" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <link rel="stylesheet" href="/css/style.css">
+  <title></title>
+</head>
+
+<body>
+  <header>
+    <h1>Profile Page</h1>
+    <h3>Welcome</h3>
+    <nav>
+      <ul>
         <li>
-          <%=  users[i].name %> </br>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/users/new">Create New User</a>
+        </li>
+        <li><a href="/auth/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Users</h2>
+    <ul>
+      <%  for ( let i = 0; i < users.length; i++ ) { %>
+      <li>
+        <%=  users[i].name %> </br>
 
-          <img src="<%=users[i].profilePic%>"/></br>
+        <img src="<%=users[i].profilePic%>"/></br>
 
-          <form action="/users/<%=users[i].id%>" method="GET">
-            <input type="submit" value="View User">
+        <form action="/users/<%=users[i].id%>" method="GET">
+          <input type="submit" value="View User">
 
         </form>
       </li></br>
-    <%    } %>
-  </ul>
-     <main>
+      <%    } %>
+    </ul>
+    <main>
 
-      </main>
-  </body>
+    </main>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</body>
+
 </html>

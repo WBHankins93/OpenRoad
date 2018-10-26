@@ -11,27 +11,28 @@
  }
 
  .plan-trip {
-     font-family: 'BioRhyme', serif;
+     font-family: 'Fira Sans', sans-serif;
  }
 
+
  .browse-trip {
-     font-family: 'BioRhyme', serif;
+     font-family: 'Fira Sans', sans-serif;
  }
 
  .staff-favs {
-     font-family: 'BioRhyme', serif;
+     font-family: 'Fira Sans', sans-serif;
  }
 
  .about {
-     font-family: 'BioRhyme', serif;
+     font-family: 'Fira Sans', sans-serif;
  }
 
  .contact {
-     font-family: 'BioRhyme', serif;
+     font-family: 'Fira Sans', sans-serif;
  }
 
  .btn {
-     font-family: 'BioRhyme', serif;
+     font-family: 'Fira Sans', sans-serif;
      align-self: stretch;
  }
 
@@ -55,10 +56,10 @@
      align-self: auto;
  }
 .aboutR {
-    
+
 }
  .topnav {
-     font-family: 'BioRhyme', serif;
+     font-family: 'Fira Sans', sans-serif;
  }
 
  #searchInput:focus {
@@ -66,11 +67,15 @@
  }
 
  h1 {
-     font-family: 'Raleway', sans-serif;
+     font-family: 'Fira Sans', sans-serif;
+ }
+
+ h3 {
+   font-family: 'Fira Sans', sans-serif;
  }
 
  a {
-     font-family: 'Raleway', sans-serif;
+     font-family: 'Fira Sans', sans-serif;
      color: darkgray;
  }
 

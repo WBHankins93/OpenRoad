@@ -1,6 +1,6 @@
 const express = require('express');
-const router  = express.Router();
-const Auth    = require('../models/auth');
+const router = express.Router();
+const Auth = require('../models/auth');
 const bcrypt = require('bcrypt');
 
 
@@ -32,29 +32,31 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   //first query the database to see if the user exists
   try {
-          const foundUser = await Auth.findOne({username: req.body.username});
-          console.log(foundUser)
+    const foundUser = await Auth.findOne({
+      username: req.body.username
+    });
+    console.log(foundUser)
 
-          if(foundUser){
-          // if the users exists use the bcrypt compare password
-          //to make sure the passwords match
-            if(bcrypt.compareSync(req.body.password, foundUser.password)){
-              req.session.logged = true;
+    if (foundUser) {
+      // if the users exists use the bcrypt compare password
+      //to make sure the passwords match
+      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+        req.session.logged = true;
 
-              res.redirect('/users')
-            } else {
+        res.redirect('/users')
+      } else {
 
-              req.session.message = 'Username or Password is Wrong';
-              res.redirect('/auth/login')
-            }
+        req.session.message = 'Username or Password is Wrong';
+        res.redirect('/auth/login')
+      }
 
 
-        } else {
-              req.session.message = 'Username or Password is Wrong';
-              res.redirect('/auth/login')
-        } // end of foundUser
+    } else {
+      req.session.message = 'Username or Password is Wrong';
+      res.redirect('/auth/login')
+    } // end of foundUser
 
-  } catch(err) {
+  } catch (err) {
     res.send('error')
   }
 });
@@ -64,7 +66,7 @@ router.post('/login', async (req, res) => {
 router.get('/logout', (req, res) => {
 
   req.session.destroy((err) => {
-    if(err){
+    if (err) {
       res.send(err);
     } else {
       res.redirect('/auth/login')

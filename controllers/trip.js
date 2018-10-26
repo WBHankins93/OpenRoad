@@ -89,14 +89,16 @@ router.delete('/:id', async (req, res) => {
   try {
 
     const deletedTrip = await Trip.findOneAndRemove(req.params.id);
-    const foundUser = await User.findOne({'trips._id': req.params.id});
+    const foundUser = await User.findOne({
+      'trips._id': req.params.id
+    });
 
     console.log(foundUser);
     foundUser.trips.id(req.params.id).remove();
     console.log(foundUser);
     foundUser.save((err, data) => {
-            res.redirect('/trip');
-          });
+      res.redirect('/trip');
+    });
 
 
   } catch (err) {
